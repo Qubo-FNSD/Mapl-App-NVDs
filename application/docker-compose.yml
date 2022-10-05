@@ -1,0 +1,36 @@
+version: '3.8' #  Version of this Yaml Model File, compatible with the latest Docker Engine Version (19.03.0+).
+
+
+services: # We will declare, in this case, two services.
+
+  db: # Service 2 "Mongo DB
+    image: mongo
+    container_name: mongodb
+    networks:
+      - mapl-net
+    ports:
+      - 27017:27017
+    volumes:
+      - dataDB:/data/db
+
+  api:  # Service 1 "Mapl API"
+    container_name: mapl-api
+    depends_on:
+      - db
+    build: ./
+    networks:
+        - mapl-net
+    image: mapl-api
+    volumes:
+      - logs:/logs
+    ports:
+      - 8000:8000
+
+
+networks:
+  mapl-net:
+    driver: bridge
+
+volumes:
+  dataDB:
+  logs:
