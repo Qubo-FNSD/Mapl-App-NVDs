@@ -1,0 +1,1306 @@
+{
+	"info": {
+		"_postman_id": "1447378c-1ef9-4f77-a716-f91c27892d9a",
+		"name": "Mapl API App",
+		"description": "In order to test and use it, please log in with the following credentials:\n\nusuario\n\ncopy&pasteME-547",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12269458"
+	},
+	"item": [
+		{
+			"name": "1.- Get Vulns",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.request.headers.add({",
+							"key: 'Content-Type',",
+							"value: 'application/json'",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "copy&pasteME-547",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "usuario",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/getVulns?myapikey=dbd9559d-f1e7-4efa-a6a3-5c36a852e7ae&keyword=google&resultsperpage=500",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"getVulns"
+					],
+					"query": [
+						{
+							"key": "myapikey",
+							"value": "dbd9559d-f1e7-4efa-a6a3-5c36a852e7ae"
+						},
+						{
+							"key": "keyword",
+							"value": "google"
+						},
+						{
+							"key": "resultsperpage",
+							"value": "500"
+						}
+					]
+				},
+				"description": "[http:/](http://127.0.0.1:27890/getVulns?keyword=google)104.196.37.49:8000[/getVulns?keyword=google](http://127.0.0.1:27890/getVulns?keyword=google)"
+			},
+			"response": [
+				{
+					"name": "Delete DB",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/getVulns?mode=del",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"getVulns"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "del",
+									"description": "This command leave empty the db for a new searcg workflow"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"results\": \"Success\",\n    \"message\": \"All CVE data has been removed from the database\",\n    \"data\": []\n}"
+				},
+				{
+					"name": "Update DB",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/getVulns?myapikey=dbd9559d-f1e7-4efa-a6a3-5c36a852e7ae&keyword=safari&resultsperpage=500",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"getVulns"
+							],
+							"query": [
+								{
+									"key": "myapikey",
+									"value": "dbd9559d-f1e7-4efa-a6a3-5c36a852e7ae"
+								},
+								{
+									"key": "keyword",
+									"value": "safari"
+								},
+								{
+									"key": "resultsperpage",
+									"value": "500"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Thu, 01 Sep 2022 18:46:01 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "1333"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"results\": \"Success\",\n    \"message\": \"Database have been updated. 47 records has been added\",\n    \"data\": [\n        [\n            \"CVE-2022-32893\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-22620\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-22592\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-22590\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-22589\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2011-1344\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2009-2199\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2009-1724\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2009-1702\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2009-1701\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2009-1700\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2009-1692\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2009-1680\",\n            \"LOW\"\n        ],\n        [\n            \"CVE-2008-4233\",\n            \"LOW\"\n        ],\n        [\n            \"CVE-2008-4232\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2008-4231\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2010-1755\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2008-2317\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2008-2303\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2008-1589\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2008-1588\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2008-0729\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2008-0035\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2007-5858\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2007-5450\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2007-4671\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2007-3761\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2007-3760\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2007-3759\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2007-3758\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2007-3757\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2007-3756\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2007-2400\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2020-9952\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-9951\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-9948\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-22213\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-41795\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-26731\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-1844\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-45818\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2020-9942\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2020-9945\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2020-9947\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-3902\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2020-3894\",\n            \"LOW\"\n        ],\n        [\n            \"CVE-2020-3901\",\n            \"HIGH\"\n        ]\n    ]\n}"
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/getVulns?myapikey=dbd9559d-f1e7-4efa-a6a3-5c36a852e7ae&keyword=google&resultsperpage=500",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"getVulns"
+							],
+							"query": [
+								{
+									"key": "myapikey",
+									"value": "dbd9559d-f1e7-4efa-a6a3-5c36a852e7ae"
+								},
+								{
+									"key": "keyword",
+									"value": "google"
+								},
+								{
+									"key": "resultsperpage",
+									"value": "500"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 02 Sep 2022 20:23:58 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "11966"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"results\": \"Success\",\n    \"message\": \"Database have been updated. 446 records has been added\",\n    \"data\": [\n        [\n            \"CVE-2022-1478\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1313\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1312\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-1311\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1477\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1364\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1314\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2481\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2480\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2477\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2604\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2603\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2609\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2608\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2606\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2605\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-2614\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2612\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-2610\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2016-5172\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-2617\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2616\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-2615\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-2613\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2621\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2620\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2619\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-2618\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-2624\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2622\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-23634\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-35583\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-38171\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-30560\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-37175\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2021-25738\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-2296\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2295\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2163\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-35909\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-35910\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-30629\",\n            \"LOW\"\n        ],\n        [\n            \"CVE-2022-29526\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-2162\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2164\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-2165\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-35133\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-36523\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-36524\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-36526\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-34265\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-36525\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-35624\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2503\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-32148\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-30635\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-30633\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-30632\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-30631\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-30630\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-28327\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-28131\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-27191\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-24675\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1962\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1705\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-35623\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2013-6668\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2015-0278\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2013-2882\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2015-6764\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2016-1669\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2016-3958\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2016-5180\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2017-1000097\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2017-1000098\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2587\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-2607\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-29804\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-32189\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2161\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2160\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-2158\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2157\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2156\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2011\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2010\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-2007\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1876\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1875\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1874\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1873\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1872\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1871\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1870\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1869\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1868\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1867\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1866\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1865\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1864\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1863\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1862\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1861\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1860\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1859\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1858\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1857\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1856\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1855\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1854\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1853\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-1641\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1640\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1639\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1637\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1636\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1635\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1634\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1633\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1501\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1500\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1499\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1498\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1497\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1496\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1495\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1139\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1138\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1137\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1136\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1135\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1134\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1133\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1132\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1131\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1130\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1129\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1128\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1127\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1125\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1096\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0980\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0979\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-0978\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0977\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-0976\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-0975\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0974\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-0973\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0972\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0971\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0809\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0808\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0807\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-0806\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-0805\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0804\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-0803\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-0802\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-0800\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0799\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0798\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0797\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0796\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0795\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0794\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0793\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-0792\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-0791\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-0790\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-0789\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-4079\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-4078\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-4068\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-4067\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-4066\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-4065\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-4064\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-4063\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-4062\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-4061\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-4059\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-4058\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-4057\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-4056\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-4055\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-4054\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-4053\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-4052\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-36976\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-30551\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-30580\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2014-9748\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-10531\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2424\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-37416\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1012\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-27944\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-26979\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-28367\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-24713\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1919\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-45927\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-45926\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-30547\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-36430\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-37035\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-36359\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-45729\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-27359\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1961\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2020-28366\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-13597\",\n            \"LOW\"\n        ],\n        [\n            \"CVE-2018-25009\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2018-25010\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2018-25011\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2018-25012\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2018-25013\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2018-25014\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-1799\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2021-34558\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-2415\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-27536\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-24921\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-23806\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-23773\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-23772\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-44717\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-44716\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-41772\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-41771\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-3115\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-3114\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-38297\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2021-36221\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-33198\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-33197\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-33196\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-33195\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-31525\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-29923\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-27919\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-27918\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2008\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-36917\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-36916\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-45958\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-2478\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2399\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-34047\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-34046\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-28436\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2020-0067\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2019-5823\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2019-5824\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2019-5822\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2019-5827\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2019-5828\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2019-5821\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2019-5829\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2019-5830\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2019-5831\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2019-5832\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2019-5833\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2019-5835\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2019-5836\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2019-5837\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2019-5839\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2019-5840\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1638\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-34045\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-34048\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-34049\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-26352\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2021-45943\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-42575\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2021-3744\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-30634\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-2385\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1672\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2015-5298\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-31883\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-33047\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-28935\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-32386\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-32384\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-32383\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-32385\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2020-35210\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2020-35454\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2020-35455\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-21117\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-21125\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-21127\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-21129\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-21130\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-21131\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-21133\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-21141\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-21189\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-21210\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-21217\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-21219\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-27941\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-30531\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-30532\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-30540\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-30577\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-30580\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-30583\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-30630\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-34543\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-37965\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-37967\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-37968\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-37969\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-37976\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-38019\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-38020\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-38696\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-42135\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-44420\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-45115\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-46378\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-46418\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-46419\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2021-40597\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2020-24987\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2013-4170\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-31886\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-31885\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-31887\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-31884\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1321\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-0875\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1994\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2015-1283\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-29172\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2017-20092\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2020-6556\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2018-10237\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2017-20080\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-1829\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2020-6388\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-21137\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-21159\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-21165\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-21166\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-21169\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-21220\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-21225\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-21231\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-31542\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-31055\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-29453\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1772\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2015-7547\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2019-1010065\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1707\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-25863\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2021-38593\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-40668\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-39293\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-27304\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2020-7246\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-42192\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-36403\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-28346\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2021-25746\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-25745\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-34083\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-45818\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-33194\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-29298\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-46422\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2021-38695\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-38694\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-23332\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-38697\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-0346\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2020-9402\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-8813\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-8165\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2020-8164\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-8162\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-8163\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-8184\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-8161\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-22797\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2020-22984\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-29302\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-29303\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2021-34085\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2022-26988\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-26987\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-28507\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-36912\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2019-25044\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2015-8126\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-46381\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-46424\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2021-45428\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2020-8554\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2019-13720\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-46379\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-0306\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-22556\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-22573\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-22569\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-22572\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-22571\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2020-8908\",\n            \"LOW\"\n        ],\n        [\n            \"CVE-2021-46421\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-46423\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-33034\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-46420\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-46780\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-20834\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2019-10692\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2020-6448\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2019-11841\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2020-6454\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-7692\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2021-33293\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2019-25045\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-36977\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2020-36406\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-6558\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-27435\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-27436\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2022-1119\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-6463\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-6477\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-6468\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-6464\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-6459\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2020-6494\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-45942\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-21144\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-21146\",\n            \"CRITICAL\"\n        ],\n        [\n            \"CVE-2021-21145\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2021-21147\",\n            \"MEDIUM\"\n        ],\n        [\n            \"CVE-2021-21143\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2022-28113\",\n            \"HIGH\"\n        ],\n        [\n            \"CVE-2018-11689\",\n            \"MEDIUM\"\n        ]\n    ]\n}"
+				},
+				{
+					"name": "Error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/getVulns?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"getVulns"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 02 Sep 2022 20:23:58 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "11966"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": [\n        {\n            \"loc\": [\n                \"query\",\n                \"keyword\"\n            ],\n            \"msg\": \"field required\",\n            \"type\": \"value_error.missing\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "2.- Post Fixed Vulns",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.request.headers.add({",
+							"key: 'Content-Type',",
+							"value: 'application/json'",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "copy&pasteME-547",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "usuario",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"IDS\":   \n    [\n        {\"ID\": \"CVE-2020-13254\"},\n\n        {\"ID\": \"CVE-2020-13596\"}\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/postFixedVulns",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"postFixedVulns"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Fix multiple CVEs",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"IDS\":   \n    [\n        {\"ID\": \"CVE-2022-1311\"},\n\n        {\"ID\": \"CVE-2022-1477\"},\n\n        {\"ID\": \"CVE-2022-1364\"}\n\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/postFixedVulns",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"postFixedVulns"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 02 Sep 2022 12:21:27 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "135"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"results\": \"Success\",\n    \"message\": [\n        \"Cve id CVE-2022-27255 was fixed\",\n        \"Cve id CVE-2022-32250 was fixed\",\n        \"Cve id CVE-2022-37434 was fixed\"\n    ]\n}"
+				},
+				{
+					"name": "Already fixed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"IDS\":   \n    [\n        {\"ID\": \"CVE-2022-1311\"},\n\n        {\"ID\": \"CVE-2022-1477\"},\n\n        {\"ID\": \"CVE-2022-1364\"}\n\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/postFixedVulns",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"postFixedVulns"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 02 Sep 2022 12:22:16 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "156"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"results\": \"Warning\",\n    \"message\": [\n        \"Cve id CVE-2022-27255 is already fixed\",\n        \"Cve id CVE-2022-32250 is already fixed\",\n        \"Cve id CVE-2022-37434 is already fixed\"\n    ]\n}"
+				},
+				{
+					"name": "Fix single CVE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"IDS\":   \n    [\n        {\"ID\": \"CVE-2022-2608\"}\n    ]\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/postFixedVulns",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"postFixedVulns"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 02 Sep 2022 12:23:23 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "87"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"results\": \"Error\",\n    \"message\": [\n        \"Cve id CVE-2022-12345 does not exists in the database\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "3.- Get Open Vulns",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.request.headers.add({",
+							"key: 'Content-Type',",
+							"value: 'application/json'",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "copy&pasteME-547",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "usuario",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/getOpenVulns",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"getOpenVulns"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "3.- Get Open Vulns Example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/getOpenVulns",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"getOpenVulns"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 02 Sep 2022 12:00:45 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "925"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"results\": \"Success\",\n    \"message\": \"50 vulnerabilities are not fixed.\",\n    \"data\": [\n        \"CVE-2022-38054\",\n        \"CVE-2022-38170\",\n        \"CVE-2022-31003\",\n        \"CVE-2022-31002\",\n        \"CVE-2022-31001\",\n        \"CVE-2022-29158\",\n        \"CVE-2022-29063\",\n        \"CVE-2022-25813\",\n        \"CVE-2022-25371\",\n        \"CVE-2022-25370\",\n        \"CVE-2022-2132\",\n        \"CVE-2022-34266\",\n        \"CVE-2022-39194\",\n        \"CVE-2022-39190\",\n        \"CVE-2022-39189\",\n        \"CVE-2022-39188\",\n        \"CVE-2022-37679\",\n        \"CVE-2022-36637\",\n        \"CVE-2022-36636\",\n        \"CVE-2022-36609\",\n        \"CVE-2022-36600\",\n        \"CVE-2022-39177\",\n        \"CVE-2022-39176\",\n        \"CVE-2022-36594\",\n        \"CVE-2022-36593\",\n        \"CVE-2022-21509\",\n        \"CVE-2022-21515\",\n        \"CVE-2022-21517\",\n        \"CVE-2022-21522\",\n        \"CVE-2022-21525\",\n        \"CVE-2022-21526\",\n        \"CVE-2022-21527\",\n        \"CVE-2022-21528\",\n        \"CVE-2022-21529\",\n        \"CVE-2022-21530\",\n        \"CVE-2022-21531\",\n        \"CVE-2022-21534\",\n        \"CVE-2022-21537\",\n        \"CVE-2022-23674\",\n        \"CVE-2022-23675\",\n        \"CVE-2022-23673\",\n        \"CVE-2022-23672\",\n        \"CVE-2022-23671\",\n        \"CVE-2022-23669\",\n        \"CVE-2020-35680\",\n        \"CVE-2020-29550\",\n        \"CVE-2020-29552\",\n        \"CVE-2022-39170\",\n        \"CVE-2022-37177\",\n        \"CVE-2022-36759\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "4.- Get Total Vulns by Severity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.request.headers.add({",
+							"key: 'Content-Type',",
+							"value: 'application/json'",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "copy&pasteME-547",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "usuario",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/getTotalVulnsBySeverity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"getTotalVulnsBySeverity"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/getTotalVulnsBySeverity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"getTotalVulnsBySeverity"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 02 Sep 2022 12:02:25 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "121"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"results\": \"Success\",\n    \"message\": \"27 Vulnerabilities in total\",\n    \"data\": {\n        \"Critical\": 2,\n        \"High\": 9,\n        \"Medium\": 16,\n        \"Low\": 0,\n        \"None\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "0.- Get /",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.request.headers.add({",
+							"key: 'Content-Type',",
+							"value: 'application/json'",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example Get \"/\" (Does not need auth)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 02 Sep 2022 19:41:59 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "606"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    \"Los siguientes parámetros están disponibles: getVulns, postFixedVulns, getOpenVulns, getTotalVulnsBySeverity. Puede acceder a ellos desde cualquier lugar. Pero estos parámetros están protegidos. Por lo tanto si necesita acceder a ellos, comuníquese con quien le proporcionó este dominio o consulte la documentación.\",\n    \"The following Endpoints are available: getVulns, postFixedVulns, getOpenVulns, getTotalVulnsBySeverity . You can reach them from everywhere. But these endpoints are protected. So, if you need to access them, please contact to whom give you this domain or look the documentation\"\n]"
+				}
+			]
+		},
+		{
+			"name": "From GCP Deployment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.request.headers.add({",
+							"key: 'Content-Type',",
+							"value: 'application/json'",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.71.203.8:8000/",
+					"protocol": "http",
+					"host": [
+						"34",
+						"71",
+						"203",
+						"8"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example Get \"/\" (Does not need auth)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://35.222.177.101:8000/",
+							"protocol": "http",
+							"host": [
+								"35",
+								"222",
+								"177",
+								"101"
+							],
+							"port": "8000",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 02 Sep 2022 19:41:59 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "606"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    \"Los siguientes parámetros están disponibles: getVulns, postFixedVulns, getOpenVulns, getTotalVulnsBySeverity. Puede acceder a ellos desde cualquier lugar. Pero estos parámetros están protegidos. Por lo tanto si necesita acceder a ellos, comuníquese con quien le proporcionó este dominio o consulte la documentación.\",\n    \"The following Endpoints are available: getVulns, postFixedVulns, getOpenVulns, getTotalVulnsBySeverity . You can reach them from everywhere. But these endpoints are protected. So, if you need to access them, please contact to whom give you this domain or look the documentation\"\n]"
+				}
+			]
+		},
+		{
+			"name": "From GCP Deployment Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.request.headers.add({",
+							"key: 'Content-Type',",
+							"value: 'application/json'",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://35.222.177.101:8000/",
+					"protocol": "http",
+					"host": [
+						"35",
+						"222",
+						"177",
+						"101"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example Get \"/\" (Does not need auth)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://35.222.177.101:8000/",
+							"protocol": "http",
+							"host": [
+								"35",
+								"222",
+								"177",
+								"101"
+							],
+							"port": "8000",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 02 Sep 2022 19:41:59 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "606"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    \"Los siguientes parámetros están disponibles: getVulns, postFixedVulns, getOpenVulns, getTotalVulnsBySeverity. Puede acceder a ellos desde cualquier lugar. Pero estos parámetros están protegidos. Por lo tanto si necesita acceder a ellos, comuníquese con quien le proporcionó este dominio o consulte la documentación.\",\n    \"The following Endpoints are available: getVulns, postFixedVulns, getOpenVulns, getTotalVulnsBySeverity . You can reach them from everywhere. But these endpoints are protected. So, if you need to access them, please contact to whom give you this domain or look the documentation\"\n]"
+				}
+			]
+		},
+		{
+			"name": "From AWS Deployment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.request.headers.add({",
+							"key: 'Content-Type',",
+							"value: 'application/json'",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://18.102.69.37:8000/",
+					"protocol": "http",
+					"host": [
+						"18",
+						"102",
+						"69",
+						"37"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example Get \"/\" (Does not need auth)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://15.160.159.185:8000/",
+							"protocol": "http",
+							"host": [
+								"15",
+								"160",
+								"159",
+								"185"
+							],
+							"port": "8000",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 02 Sep 2022 19:41:59 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "606"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    \"Los siguientes parámetros están disponibles: getVulns, postFixedVulns, getOpenVulns, getTotalVulnsBySeverity. Puede acceder a ellos desde cualquier lugar. Pero estos parámetros están protegidos. Por lo tanto si necesita acceder a ellos, comuníquese con quien le proporcionó este dominio o consulte la documentación.\",\n    \"The following Endpoints are available: getVulns, postFixedVulns, getOpenVulns, getTotalVulnsBySeverity . You can reach them from everywhere. But these endpoints are protected. So, if you need to access them, please contact to whom give you this domain or look the documentation\"\n]"
+				}
+			]
+		},
+		{
+			"name": "From AWS Deployment Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.request.headers.add({",
+							"key: 'Content-Type',",
+							"value: 'application/json'",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://15.160.159.185:8000/",
+					"protocol": "http",
+					"host": [
+						"15",
+						"160",
+						"159",
+						"185"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example Get \"/\" (Does not need auth)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://15.160.159.185:8000/",
+							"protocol": "http",
+							"host": [
+								"15",
+								"160",
+								"159",
+								"185"
+							],
+							"port": "8000",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 02 Sep 2022 19:41:59 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "606"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    \"Los siguientes parámetros están disponibles: getVulns, postFixedVulns, getOpenVulns, getTotalVulnsBySeverity. Puede acceder a ellos desde cualquier lugar. Pero estos parámetros están protegidos. Por lo tanto si necesita acceder a ellos, comuníquese con quien le proporcionó este dominio o consulte la documentación.\",\n    \"The following Endpoints are available: getVulns, postFixedVulns, getOpenVulns, getTotalVulnsBySeverity . You can reach them from everywhere. But these endpoints are protected. So, if you need to access them, please contact to whom give you this domain or look the documentation\"\n]"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "copy&pasteME-547",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "usuario",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.headers.add({",
+					"key: 'Content-Type',",
+					"value: 'application/json'",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Response time is less than 5000ms\", () => {",
+					"  pm.expect(pm.response.responseTime).to.be.below(5000);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "<username>",
+			"value": "usuario",
+			"type": "string"
+		},
+		{
+			"key": "<password>",
+			"value": "copy&pasteME-547",
+			"type": "string"
+		}
+	]
+}
