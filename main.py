@@ -17,7 +17,6 @@ import secrets
 import uvicorn
 import json
 import os
-from decouple import config
 
 #   Consts
 mode_dropDB = "del"
@@ -25,8 +24,6 @@ status_success = "Success"
 status_error = "Error"
 status_warning = "Warning"
 status_fixed = "fixed"
-AUTH_USER = config('AUTH_USER')
-AUTH_PASSWORD = config('AUTH_PASSWORD')
 
 #   Connection to mongoDB with docker and locally
 if os.environ.get('DOCKER_CONTAINER', False) == "Yes":
@@ -72,12 +69,12 @@ def firstPayload():
 #   Defining authentication
 def authentication(username, password):
     current_username_bytes = username.encode("utf8")
-    correct_username_bytes = AUTH_USER.encode("utf8")
+    correct_username_bytes = b"usuario"
     is_correct_username = secrets.compare_digest(
         current_username_bytes, correct_username_bytes
     )
     current_password_bytes = password.encode("utf8")
-    correct_password_bytes = AUTH_PASSWORD.encode("utf8")
+    correct_password_bytes = b"copy&pasteME-547"
     is_correct_password = secrets.compare_digest(
         current_password_bytes, correct_password_bytes
     )
