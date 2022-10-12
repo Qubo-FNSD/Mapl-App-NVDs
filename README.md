@@ -80,14 +80,10 @@ Install all the libraries using pip install -r requirements.txt:
 
 
 ```bash
-pip install pipreqs
-
-&&
-
-pipreqs
+pip install -r requirements.txt
 ```
 
-Run Mongo.
+## 4.- Run MongoDB locally
 
 ```bash
 
@@ -99,17 +95,14 @@ brew services start mongodb-community
 
 ```
 
-Navegate to app folder.
+## 5.- Run the API
 
-```bash
-cd app
-```
-
-Run Python script.
 ```bash
 python3 main.py
 ```
-Now you can continue testing from Postman (instructions below).
+
+
+# Now you can continue testing from Postman (instructions below).
 
 
 
@@ -135,17 +128,11 @@ And follow the instructions. To run the scripts, we need to run Docker first.
 
 # Run the Docker Containers.
 
-From Mapl-App folder, navigate to the app folder and run the Docker build and compose command.
-
-```bash
-cd app
-```
+From Mapl-App-NVDs folder, run the Docker build and compose command.
 
 ```bash
 docker-compose up -d
 ```
-
-
 
 When stop the containers is needed, use:
 
@@ -245,8 +232,13 @@ ___
 
 
 ## Developmental potential:
-
+- Add more endpoints to manage the API.
+- Testing the API with Pytest.
+- QA testing.
+- and more...
 
 ### Be connected
 
 https://join.slack.com/t/mapl-alp-2022/shared_invite/zt-1exbwmwps-zE7NC~bKRPWOozkr20RH4g
+
+
