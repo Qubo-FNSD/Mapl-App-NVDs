@@ -17,7 +17,7 @@ services: # We will declare, in this case, two services.
     container_name: mapl-api
     depends_on:
       - db
-    build: ./
+    build: application
     networks:
         - mapl-net
     image: mapl-api

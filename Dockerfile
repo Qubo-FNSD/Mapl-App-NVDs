@@ -10,7 +10,7 @@ RUN pip install pipreqs
 
 RUN pipreqs
 
-COPY ./ /app
+COPY application /app
 
 RUN mkdir "logs"
 

@@ -75,9 +75,9 @@ It will look like this:
 
 ![Checkpoint](/screenshots/Screenshot1.png)
 
-```bash
+____    
+Install all the libraries using pip install -r requirements.txt:
 
-Install all the librearies uding pip.
 
 ```bash
 pip install pipreqs
