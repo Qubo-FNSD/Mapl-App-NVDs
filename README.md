@@ -1,17 +1,18 @@
 # Mapl-App-NVDs
-The following application has different endpoints to retrieve and manage API vulnerabilities from the NATIONAL VULNERABILITIES DATABASE (NVD), NIST.  For more information: https://nvd.nist.gov/developers/vulnerabilities
+The following application has different endpoints to retrieve and manage API vulnerabilities from the NATIONAL VULNERABILITIES DATABASE (NVD), NIST.  
 
+For more information: https://nvd.nist.gov/developers/vulnerabilities
 
+The database used is MongoDB, it could be run in a local machine or in several cloud services. 
 
+The application is developed in Python using the FastAPI framework.  The application could be deployed in a Docker container too.
 
-# Info
-## For the credential file .env send me a message on discord: Luck547#7467
-
-### The pip install command was updated
-
+_____________________________________________________
+### For the credentials file .env send me a message on discord: Luck547#7467
+_____________________________________________________
 
 # Pre requisites 
-For the local excecution of the API, the following components are required:
+## For the local execution of the API, the following components are required:
 
     
      Python3: The language the Ap has been written.
@@ -24,29 +25,25 @@ And all the pip libraries contained in requirements.txt file.
     requests
     uvicorn
 
-For Docker excecution, Docker Engine (and optionally Docker compose plugin) it's only needed, and the rest of components will be automatically added.
+For Docker execution, Docker Engine (and optionally Docker compose plugin) it's only needed, and the rest of components will be automatically added.
 
 
 _____
 _____
+# Instructions for Installation
 
+## 1.- Clone the Repo
 
-# Clone the Repo
-
-Run the following command to clone the repository
+Run the following command to clone the repository.
 
 ```bash
-
-    git clone https://github.com/Luck547/Mapl-App.git
-         
+git clone https://github.com/Qubo-FNSD/Mapl-App-NVDs.git
 ```
 
 Navigate to the ap directory with:
 
 ```bash
-
-    cd Mapl-App
-         
+cd Mapl-App-NVDs
 ```
 
 ___
@@ -61,25 +58,24 @@ ___
 # Locally:
 
 
-Create a new virtual environment.
-
+## 2.- Create a new virtual environment.
 
 
 ```bash
-
-    python3 -m venv venv
-         
+python3 -m venv venv
 ```
 
-
-Activate the virtual environment.
+## 3.- Activate the virtual environment.
 
 ```bash
-
-    source venv/bin/activate
-         
+source venv/bin/activate      
 ```
 
+It will look like this:
+
+![Checkpoint](/screenshots/Screenshot1.png)
+
+```bash
 
 Install all the librearies uding pip.
 
