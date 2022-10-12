@@ -237,6 +237,9 @@ ___
 - QA testing.
 - and more...
 
+# The app is also live in the cloud. AWS and Google Cloud.
+
+
 ### Be connected
 
 https://join.slack.com/t/mapl-alp-2022/shared_invite/zt-1exbwmwps-zE7NC~bKRPWOozkr20RH4g
