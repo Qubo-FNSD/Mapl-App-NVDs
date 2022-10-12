@@ -7,9 +7,6 @@ The database used is MongoDB, it could be run in a local machine or in several c
 
 The application is developed in Python using the FastAPI framework.  The application could be deployed in a Docker container too.
 
-_____________________________________________________
-### For the credentials file .env send me a message on discord: Luck547#7467
-_____________________________________________________
 
 # Pre requisites 
 ## For the local execution of the API, the following components are required:
@@ -244,4 +241,4 @@ ___
 
 https://join.slack.com/t/mapl-alp-2022/shared_invite/zt-1exbwmwps-zE7NC~bKRPWOozkr20RH4g
 
-
+On discord: Luck547#7467
